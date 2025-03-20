@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    font-family: "Winky Sans", sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+    color: #fff;
+    font-weight: 400;
+    background: #1e3a5f;
+    background-image:linear-gradient(115deg, rgba(58, 58, 158, 0.8), rgba(136, 136, 206, 0.7)),
+    url('https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-darkblue);
+    z-index: -1;
+    background-image:linear-gradient(115deg, rgba(58, 58, 158, 0.8), rgba(136, 136, 206, 0.7)),
+    url('https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+p{
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    align-items: center;
+    font-size: 1.125rem;
+}
+
+input, button, select, textarea{
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    border: 1px solid #fff;
+    border-radius: 0.25rem;
+    background: #1e3a5f;
+    color: #fff;
+}
+ 
+input {
+    background-color: #fff;
+}
+
+input:focus, button:focus, select:focus, textarea:focus {
+    outline: 2px solid ;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    align-items: center;
+    margin-right: 0.625rem;
+    min-height: 1.25rem;
+    min-width: 1.25rem;
+}
+
+input[type="radio"]{
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    background-color: #fff;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s, border-color 0.3s;
+}
+input[type="radio"]:checked {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+}
+
+input[type="radio"]:checked::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.radio {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+
+.label-radio{
+    margin-left: 10px;
+    font-size: 1.1.rem;
+}
+
+.label-checkbox, input[type="checkbox"] {
+    min-height: 1.25rem;
+    min-width: 1.25rem;
+    margin:  0.5rem ;
+}
+
+button {
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1.125rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+}
+
+button:hover {
+    background: rgba(52, 152, 219, 0.8);
+}
+
+form {
+    background: rgba(27, 27, 50, 0.8);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    margin: 2rem auto;
+    max-width: 600px;
+}
+
+input[type="submit"] {
+    background: #37af65;;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1.125rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+}
