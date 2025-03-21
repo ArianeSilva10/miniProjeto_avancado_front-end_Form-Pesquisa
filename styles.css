@@ -2,6 +2,7 @@
 
 html, body {
     height: 100%;
+    margin: 0;
 }
 
 body {
@@ -12,15 +13,8 @@ body {
     font-family: "Winky Sans", sans-serif;
     font-size: 1rem;
     line-height: 1.5;
-    margin: 0;
     color: #fff;
     font-weight: 400;
-    background: #1e3a5f;
-    background-image:linear-gradient(115deg, rgba(58, 58, 158, 0.8), rgba(136, 136, 206, 0.7)),
-    url('https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 body::before {
@@ -30,9 +24,9 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--color-darkblue);
     z-index: -1;
-    background-image:linear-gradient(115deg, rgba(58, 58, 158, 0.8), rgba(136, 136, 206, 0.7)),
+    background: #1e3a5f;
+    background-image: linear-gradient(115deg, rgba(58, 58, 158, 0.8), rgba(136, 136, 206, 0.7)),
     url('https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg');
     background-size: cover;
     background-position: center;
@@ -45,7 +39,7 @@ h1 {
     font-weight: 700;
 }
 
-p{
+p {
     margin-bottom: 1rem;
     margin-top: 0;
 }
@@ -53,11 +47,10 @@ p{
 label {
     display: block;
     margin-bottom: 0.5rem;
-    align-items: center;
     font-size: 1.125rem;
 }
 
-input, button, select, textarea{
+input, button, select, textarea {
     width: 100%;
     padding: 0.5rem;
     margin: 0.5rem 0;
@@ -65,96 +58,134 @@ input, button, select, textarea{
     border: 1px solid #fff;
     border-radius: 0.25rem;
     background: #1e3a5f;
-    color: #fff;
+    color: #000;
 }
  
-input {
+input[type="text"], input[type="email"], input[type="number"] {
     background-color: #fff;
+    color: #333;
 }
 
 input:focus, button:focus, select:focus, textarea:focus {
-    outline: 2px solid ;
+    outline: 2px solid #37af65;
 }
 
-input[type="radio"], input[type="checkbox"] {
+/* radio buttons */
+.radio {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.radio-group {
+    display: flex;
     align-items: center;
-    margin-right: 0.625rem;
-    min-height: 1.25rem;
-    min-width: 1.25rem;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
-input[type="radio"]{
+input[type="radio"] {
     appearance: none;
-    width: 20px;
-    height: 20px;
+    width: 0.875rem;
+    height: 0.875rem;
     border-radius: 50%;
-    border: 2px solid #333;
-    background-color: #fff;
+    border: 2px solid #fff;
+    background-color: transparent;
     position: relative;
     cursor: pointer;
     transition: background 0.3s, border-color 0.3s;
+    margin: 0;
+    vertical-align: middle;
+    right: 5px;
 }
+
+
+
 input[type="radio"]:checked {
     background-color: #4CAF50;
     border-color: #4CAF50;
 }
 
-input[type="radio"]:checked::before {
-    content: '';
+input[type="radio"]:checked::after {
     position: absolute;
-    top: 4px;
-    left: 4px;
-    width: 10px;
-    height: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0.5rem;
+    height: 0.5rem;
     border-radius: 50%;
     background-color: #fff;
 }
 
-.radio {
+/* Checkboxes */
+.div-recurso-checkbox {
     display: flex;
-    flex-direction: row;
-    gap: 20px;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.checkbox-group {
+    display: flex;
     align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
-.label-radio{
-    margin-left: 10px;
-    font-size: 1.1.rem;
+input[type="checkbox"] {
+    width: 0.875rem;
+    height: 0.875rem;
+    margin: 0;
+    vertical-align: middle;
 }
 
-.label-checkbox, input[type="checkbox"] {
-    min-height: 1.25rem;
-    min-width: 1.25rem;
-    margin:  0.5rem ;
+.label-checkbox {
+    margin: 0;
+    vertical-align: middle;
 }
 
 button {
+    background-color: #37af65;
     color: #fff;
     border: none;
     cursor: pointer;
     font-size: 1.125rem;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1rem;
     border-radius: 0.25rem;
+    transition: background-color 0.3s;
 }
 
-button:hover {
-    background: rgba(52, 152, 219, 0.8);
+button:hover, input[type="submit"]:hover {
+    background-color: #2d8b50;
 }
 
 form {
     background: rgba(27, 27, 50, 0.8);
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: 0.5rem;
     margin: 2rem auto;
     max-width: 600px;
+    width: 90%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+select {
+    color: #fff;
+}
+
+textarea {
+    color: #fff;
 }
 
 input[type="submit"] {
-    background: #37af65;;
+    background-color: #37af65;
     color: #fff;
     border: none;
     cursor: pointer;
     font-size: 1.125rem;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1rem;
     border-radius: 0.25rem;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
 }
